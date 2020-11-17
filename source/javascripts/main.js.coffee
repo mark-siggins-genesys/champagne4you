@@ -25,4 +25,7 @@ nav_button.addEventListener 'click', (->
   return
 ) window, document, 'script', 'https://apps.inindca.com/journey/sdk/js/web/v1/ac.js', 'ac'
 ac 'init', 'df88e30f-cf36-4b12-87af-5006078ea20d', environment: 'dev'
-ac 'pageview', {'title': window.location.pathname}
+replacement = '-'
+pagePathWithDashes = window.location.pathname
+pagePathWithDashes.replace /\//g, replacement
+ac 'pageview', {'title': pagePathWithDashes}
