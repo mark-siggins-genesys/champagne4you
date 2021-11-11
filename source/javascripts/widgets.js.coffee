@@ -1,9 +1,16 @@
-window._genesys = widgets: webchat: transport:
-  type: 'purecloud-v2-sockets'
-  dataURL: 'https://api.mypurecloud.ie'
-  deploymentKey: 'caa0323a-7079-4d55-b777-c49db1fe1206'
-  orgGuid: '77da0b5f-76dd-40b7-a30c-9f14130bc9e9'
-  interactionData: routing:
-    targetType: 'QUEUE'
-    targetAddress: 'SalesHotProspects'
-    priority: 2
+((g, e, n, es, ys) ->
+  g['_genesysJs'] = e
+  g[e] = g[e] or ->
+    (g[e].q = g[e].q or []).push arguments
+    return
+  g[e].t = 1 * new Date
+  g[e].c = es
+  ys = document.createElement('script')
+  ys.async = 1
+  ys.src = n
+  ys.charset = 'utf-8'
+  document.head.appendChild ys
+  return
+) window, 'Genesys', 'https://apps.inindca.com/genesys-bootstrap/genesys.min.js',
+  environment: 'dev'
+  deploymentId: '3a7a7215-d6bd-4256-8ef1-2661bd2df2b8'
