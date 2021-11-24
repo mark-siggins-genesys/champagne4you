@@ -104,3 +104,4 @@ registerDxPlugin = ->
   return
 
 registerDxPlugin()
+Genesys 'configure', debug: true
