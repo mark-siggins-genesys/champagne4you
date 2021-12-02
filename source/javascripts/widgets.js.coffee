@@ -43,6 +43,19 @@ registerDxPlugin = ->
         widgetId: widgetId
       }
 
+    getData = (key) ->
+      value = localStorage.getItem(key)
+      if value
+        return JSON.parse(value)
+      {}
+
+    getCustomerId = ->
+      getJourneyIdentifier '_actmu'
+
+    getJourneyIdentifier = (id) ->
+      val = getData(id)
+      if val and val.value then val.value else null
+
     loadBoldChat = (openAction) ->
       extractedOpenAction = getChatConfiguration(openAction)
       window._bcvma = window._bcvma or []
@@ -54,6 +67,11 @@ registerDxPlugin = ->
         'setParameter'
         'WebsiteID'
         extractedOpenAction.websiteId
+      ]
+      window._bcvma.push [
+        'setParameter'
+        'VisitInfo'
+        getCustomerId()
       ]
       window._bcvma.push [
         'addFloat'
