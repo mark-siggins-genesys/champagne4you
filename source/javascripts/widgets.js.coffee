@@ -11,9 +11,9 @@
   ys.charset = 'utf-8'
   document.head.appendChild ys
   return
-) window, 'Genesys', 'https://apps.inindca.com/genesys-bootstrap/genesys.min.js',
-  environment: 'dev'
-  deploymentId: '3a7a7215-d6bd-4256-8ef1-2661bd2df2b8'
+) window, 'Genesys', 'https://apps.inintca.com/genesys-bootstrap/genesys.min.js',
+  environment: 'test'
+  deploymentId: '147b8396-c03f-423a-8e84-d5165c093c65'
 
 registerDxPlugin = ->
   Genesys 'registerPlugin', 'GenesysDX', (Dx) ->
@@ -95,7 +95,7 @@ registerDxPlugin = ->
         vms = document.createElement('script')
         vms.type = 'text/javascript'
         vms.async = true
-        vms.src = 'https://vmss-app51.boldchat.com/aid/' + extractedOpenAction.accountId + '/bc.vms4/vms.js'
+        vms.src = 'https://vmss-gamma.boldchat.com/aid/' + extractedOpenAction.accountId + '/bc.vms4/vms.js'
         s = document.getElementsByTagName('script')[0]
         s.parentNode.insertBefore vms, s
         registerChatStateChange 'offered', openAction
